@@ -14,7 +14,7 @@
               </div>
             </div>
             <hr>
-            <div *ngFor="let pokemon of pokemonList" (click)="openModal(pokemon.url)">
+            <div *ngFor="let pokemon of pokemonList; let i = index" (click)="openModal(pokemon.url, i)">
               <div class="card mb-3">
                 <div class="card-body">
                   <p class="card-text">{{ pokemon.name }}</p> 

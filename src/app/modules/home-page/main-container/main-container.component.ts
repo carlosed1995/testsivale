@@ -45,8 +45,9 @@ export class MainContainerComponent implements OnInit {
     this.getPokemonList();
   }
 
-  openModal(pokemonUrl: string) { 
-    this.pokemonService.getPokemonDetails(pokemonUrl).subscribe(
+  openModal(pokemonUrl: string, index: number) { 
+    const incrementedIndex = index + 1;
+    this.pokemonService.getPokemonDetailsById(incrementedIndex).subscribe(
       (pokemonDetails: Pokemon) => {  
         if (this.dialogRef) {
           this.dialogRef.close();

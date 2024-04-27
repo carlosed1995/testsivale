@@ -25,6 +25,16 @@ export class PokemonService {
     );
   }
 
+  getPokemonDetailsById(id: number): Observable<any> {
+    const url = `${this.apiUrl}pokemon-form/${id}`;
+    return this.http.get(url).pipe(
+      catchError(error => {
+        console.error('Error:', error);
+        throw error;
+      })
+    );
+  }
+
   getPokemonDetails(url: string): Observable<Pokemon> {
     return this.http.get<any>(url).pipe(
       map(response => {
