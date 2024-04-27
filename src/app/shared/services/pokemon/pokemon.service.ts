@@ -25,8 +25,6 @@ export class PokemonService {
     );
   }
 
-  
-
   getPokemonDetails(url: string): Observable<Pokemon> {
     return this.http.get<any>(url).pipe(
       map(response => {
