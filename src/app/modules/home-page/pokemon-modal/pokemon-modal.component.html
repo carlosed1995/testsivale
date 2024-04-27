@@ -1,0 +1,26 @@
+<mat-dialog-content>
+    <div (click)="close()">
+        <button class="close-button" >Close</button>
+    </div>
+    <h2 mat-dialog-title>{{ data.pokemon.name }}</h2>
+
+    <img [src]="data.pokemon.sprites.front_default" alt="{{ data.pokemon.name }}">
+
+    <p>ID: {{ data.pokemon.id }}</p>
+    <p>Order: {{ data.pokemon.order }}</p>
+
+    <p *ngIf="data.pokemon.is_default">This is the default form.</p>
+    <p *ngIf="!data.pokemon.is_default">This is not the default form.</p>
+
+    <p *ngIf="data.pokemon.is_mega">This is a mega evolution.</p>
+    <p *ngIf="!data.pokemon.is_mega">This is not a mega evolution.</p>
+
+    <p *ngIf="data.pokemon.is_battle_only">This Pokémon is battle only.</p>
+    <p *ngIf="!data.pokemon.is_battle_only">This Pokémon is not battle only.</p>
+
+    <p>Types:</p>
+    <ul>
+        <li *ngFor="let type of data.pokemon.types">{{ type.type.name }}</li>
+    </ul>
+</mat-dialog-content>
+ 

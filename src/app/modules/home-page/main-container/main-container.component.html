@@ -1,0 +1,30 @@
+<app-header></app-header>
+<div class="container mt-4">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col">
+                <h3>Pokémon List</h3>
+              </div>
+              <div class="col text-right">
+                <button class="btn btn-light mr-2" (click)="previousPage()" [disabled]="offset === 0">Previous</button>
+                <button class="btn btn-light" (click)="nextPage()">Next</button>
+              </div>
+            </div>
+            <hr>
+            <div *ngFor="let pokemon of pokemonList" (click)="openModal(pokemon.url)">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <p class="card-text">{{ pokemon.name }}</p>
+                  <!-- Add more details if needed -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
